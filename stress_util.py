@@ -2,8 +2,8 @@ import datetime
 import os
 import time
 
-IDLE_TIME = 10 * 60 
-STRESS_ITERATION_TIME = 10 * 60
+IDLE_TIME = 1#10 * 60 
+STRESS_ITERATION_TIME = 5#10 * 60
 STRESS_LEVEL_BEGINING = 1 # stress level in the begining of test
 STRESS_ITER_INCREMENT = 2 #in each iteration stress will increase X times
 NUM_OF_ITERATIONS = 4
@@ -17,7 +17,6 @@ def do_stress():
             datetime.datetime.now(), cpu_stress_level, STRESS_ITERATION_TIME, iter))
         os.system("stress -c {0} -t {1}".format(cpu_stress_level, STRESS_ITERATION_TIME))
         cpu_stress_level = cpu_stress_level * STRESS_ITER_INCREMENT
-        time.sleep(STRESS_ITERATION_TIME)
         pass
     
     print("{0}: Stress finished after {1} iterations".format(datetime.datetime.now(), NUM_OF_ITERATIONS))

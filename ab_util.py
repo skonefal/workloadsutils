@@ -16,8 +16,8 @@ def do_stress():
         Timestamp = datetime.datetime.now()
         print("{0}: Starting stress level {1} for {2} secs".format(
             datetime.datetime.now(), stress_level, STRESS_ITERATION_TIME))
-        os.system("ab -c {0} -s {1} -n 900000 -l -r http://10.102.44.202/index.php/Special:Random".format(
-            stress_level, STRESS_ITERATION_TIME))
+        os.system("ab -c {0} -n 500000 -l -r http://10.102.44.202/index.php/Special:Random".format(
+            stress_level))
         pass
     
     print("{0}: Stress finished after {1} iterations".format(
